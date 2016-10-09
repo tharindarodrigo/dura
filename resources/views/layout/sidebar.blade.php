@@ -13,6 +13,11 @@
                     <i class="fa fa-user"></i> <span>Agents</span>
                 </a>
             </li>
+            <li class="@yield('subscribers')">
+                <a href="{!! url('subscribers') !!}">
+                    <i class="fa fa-users"></i> <span>Subscribers</span>
+                </a>
+            </li>
             <li class="@yield('cities')">
                 <a href="{!! url('/cities') !!}">
                     <i class="fa fa-th"></i> <span>Cities</span>
