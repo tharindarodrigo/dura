@@ -34,6 +34,7 @@ class AgentsController extends Controller
         $agent->name = $request->get('name');
         $agent->nic = $request->get('nic');
         $agent->phone = $request->get('phone');
+        $agent->agent_code = Agent::generateAgentCode();
         $agent->gender = $request->get('gender');
         $agent->city_id = $request->get('city_id');
 
@@ -73,7 +74,7 @@ class AgentsController extends Controller
             $request->session()->flash('global-success', 'Successfully Updated record');
         }
 
-        return $this->index();
+        return redirect()->route('agents.index');
     }
 
     public function destroy(Request $request, $id)
@@ -98,6 +99,6 @@ class AgentsController extends Controller
             $request->session()->flash('global-warning', 'Problem Deleting Record');
         }
 
-        return redirect()->route('agents.index');
+        return redirect()->route('admin.agents.index');
     }
 }

@@ -4,7 +4,7 @@
         <tr>
             <th>#</th>
             <th>Name</th>
-            <th>Phone</th>
+            <th>Agent</th>
             <th>PIN</th>
             <th>Controls</th>
         </tr>
@@ -15,7 +15,7 @@
                 <tr>
                     <td>{!! $subscriber->id !!}</td>
                     <td>{!! $subscriber->name!!}</td>
-                    <td>{!! $subscriber->phone !!}</td>
+                    <td>{!! $subscriber->agent->name!!}</td>
                     <td>{!! $subscriber->pin !!}</td>
                     <td>
                         <div class="btn-group">

@@ -18,6 +18,7 @@ class CreateAgentsTable extends Migration
             $table->string('name');
             $table->string('nic');
             $table->string('phone');
+            $table->integer('agent_code')->unique();
             $table->boolean('gender');//1 : male | 0 : female
             $table->integer('city_id')->unsigned();
             $table->integer('area_id')->unsigned()->nullable();

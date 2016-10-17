@@ -2,9 +2,9 @@
     <!-- Logo -->
     <a href="../../index2.html" class="logo">
         <!-- mini logo for sidebar mini 50x50 pixels -->
-        <span class="logo-mini"><b>D</b>a</span>
+        <span class="logo-mini"><b>T</b>O</span>
         <!-- logo for regular state and mobile devices -->
-        <span class="logo-lg">Dura</span>
+        <span class="logo-lg">TrackOne</span>
     </a>
     <!-- Header Navbar: style can be found in header.less -->
     <nav class="navbar navbar-static-top">
@@ -30,7 +30,7 @@
                             <img src="../../dist/img/user2-160x160.jpg" class="img-circle" alt="User Image">
 
                             <p>
-                                Alexander Pierce
+                                User
                             </p>
                         </li>
                         <!-- Menu Body -->
@@ -47,9 +47,9 @@
                     </ul>
                 </li>
                 <!-- Control Sidebar Toggle Button -->
-                <li>
-                    <a href="#" data-toggle="control-sidebar"><i class="fa fa-gears"></i></a>
-                </li>
+                {{--<li>--}}
+                    {{--<a href="#" data-toggle="control-sidebar"><i class="fa fa-gears"></i></a>--}}
+                {{--</li>--}}
             </ul>
         </div>
     </nav>

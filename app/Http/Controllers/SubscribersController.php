@@ -13,7 +13,7 @@ class SubscribersController extends Controller
 {
     public function index()
     {
-        $subscribers = Subscriber::all();
+        $subscribers = Subscriber::with('agent')->get();
         return view('subscribers.index', compact('subscribers'));
     }
 
@@ -32,7 +32,6 @@ class SubscribersController extends Controller
 
         $subscriber->name = $request->get('name');
         $subscriber->pin = $request->get('pin');
-        $subscriber->phone = $request->get('phone');
 
         if ($subscriber->save()) {
             $request->session()->flash('global-success', 'Successfully Created record');
@@ -62,7 +61,6 @@ class SubscribersController extends Controller
 
         $subscriber->name = $request->get('name');
         $subscriber->pin = $request->get('pin');
-        $subscriber->phone = $request->get('phone');
 
         if ($subscriber->save()) {
             $request->session()->flash('global-success', 'Successfully Updated record');
@@ -82,6 +80,6 @@ class SubscribersController extends Controller
             $request->session()->flash('global-warning', 'Problem Deleting Record');
         }
 
-        return redirect()->route('subscribers.index');
+        return redirect()->route('admin.subscribers.index');
     }
 }

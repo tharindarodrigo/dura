@@ -15,12 +15,15 @@ Route::get('/', function () {
     return view('index');
 });
 
-Route::resource('/cities', 'CitiesController');
-Route::get('/cities/{city_id}/get-area-list', 'CitiesController@getAreas');
-Route::resource('/areas', 'AreasController');
-Route::resource('/agents', 'AgentsController');
-Route::resource('/subscribers', 'SubscribersController');
 
+Route::group(['prefix' => 'admin'], function () {
+    Route::resource('/cities', 'CitiesController');
+    Route::get('/cities/{city_id}/get-area-list', 'CitiesController@getAreas');
+    Route::resource('/areas', 'AreasController');
+    Route::resource('/agents', 'AgentsController');
+    Route::resource('/subscribers', 'SubscribersController');
+
+});
 Auth::routes('');
 
 Route::get('/home', 'HomeController@index');

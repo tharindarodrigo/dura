@@ -63,7 +63,7 @@ class AreasController extends Controller
             $request->session()->flash('global-success', 'Successfully Updated record');
         }
 
-        return $this->index();
+        return redirect()->route('areas.index');
     }
 
     public function destroy(Request $request, $id)
@@ -84,6 +84,6 @@ class AreasController extends Controller
             $request->session()->flash('global-warning', 'Problem Deleting Record');
         }
 
-        return redirect()->route('areas.index');
+        return redirect()->route('admin.areas.index');
     }
 }

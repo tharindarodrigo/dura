@@ -66,7 +66,7 @@ class CitiesController extends Controller
             $request->session()->flash('global-success', 'Successfully Updated record');
         }
 
-        return $this->index();
+        return redirect()->route('cities.index');
     }
 
     public function destroy(Request $request, $id)
@@ -87,7 +87,7 @@ class CitiesController extends Controller
             $request->session()->flash('global-warning', 'Problem Deleting Record');
         }
 
-        return redirect()->route('cities.index');
+        return redirect()->route('admin.cities.index');
     }
 
     public function getAreas($cityId)
