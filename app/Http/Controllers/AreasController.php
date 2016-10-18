@@ -84,6 +84,6 @@ class AreasController extends Controller
             $request->session()->flash('global-warning', 'Problem Deleting Record');
         }
 
-        return redirect()->route('admin.areas.index');
+        return redirect()->route('areas.index');
     }
 }

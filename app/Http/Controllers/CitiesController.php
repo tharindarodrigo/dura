@@ -87,7 +87,7 @@ class CitiesController extends Controller
             $request->session()->flash('global-warning', 'Problem Deleting Record');
         }
 
-        return redirect()->route('admin.cities.index');
+        return redirect()->route('cities.index');
     }
 
     public function getAreas($cityId)

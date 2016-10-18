@@ -11,7 +11,7 @@ class Agent extends Model
 
     public static function generateAgentCode()
     {
-        $count = 0;
+
         if (!Agent::first()) {
             $count = 10000;
         } else {

@@ -7,7 +7,6 @@ use Illuminate\Http\Request;
 use App\Http\Requests;
 use App\Agent;
 use Illuminate\Support\Facades\Validator;
-use Illuminate\Support\Facades\Session;
 
 
 class AgentsController extends Controller
@@ -99,6 +98,6 @@ class AgentsController extends Controller
             $request->session()->flash('global-warning', 'Problem Deleting Record');
         }
 
-        return redirect()->route('admin.agents.index');
+        return redirect()->route('agents.index');
     }
 }

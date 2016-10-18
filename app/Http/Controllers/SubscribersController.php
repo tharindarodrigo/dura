@@ -80,6 +80,6 @@ class SubscribersController extends Controller
             $request->session()->flash('global-warning', 'Problem Deleting Record');
         }
 
-        return redirect()->route('admin.subscribers.index');
+        return redirect()->route('subscribers.index');
     }
 }
