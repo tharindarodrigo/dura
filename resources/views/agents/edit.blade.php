@@ -1,8 +1,21 @@
 @extends('layout.master')
 
-@section('styles')
+@push('styles')
+{{--    <link rel="stylesheet" href="{!! asset('control-panel/plugins/datatables/jquery.dataTables.css') !!}">--}}
+<link rel="stylesheet" href="{!! asset('control-panel/plugins/datatables/dataTables.bootstrap.css') !!}">
 
-@endsection
+
+<style type="text/css">
+    th {
+        text-align: center;
+    }
+
+    td {
+        text-align: center;
+        vertical-align: bottom;
+    }
+</style>
+@endpush
 
 @section('title')
     Agents
@@ -51,7 +64,18 @@
         </div>
     </div>
 @endsection
+@push('scripts')
 
+<script src="{!! asset('control-panel/plugins/datatables/jquery.dataTables.js') !!}"></script>
+<script src="{!! asset('control-panel/plugins/datatables/dataTables.bootstrap.min.js') !!}"></script>
+
+<script>
+    $(document).ready(function () {
+        $('#myTable').dataTable();
+    });
+</script>
+
+@endpush
 
 
 

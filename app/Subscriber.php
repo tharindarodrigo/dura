@@ -13,6 +13,23 @@ class Subscriber extends Model
     ];
 
 
+    public function getSubscribersByAgent($from=null, $to=null, $pin='%'){
+//        $subscriber = Subscriber::all();
+//        if(!empty($from) && !empty($to)){
+//
+//        } else {
+//
+//        }
+        $subscribers = Subscriber::where('created_on','<=', $from)
+            ->where('created_on','>=', $to)
+            ->where('pin',$pin)
+            ->get();
+
+        return $subscribers;
+
+    }
+
+
     /**
      * Relationships
      */

@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use Illuminate\Database\Eloquent\ModelNotFoundException;
 use Illuminate\Http\Request;
 
 use App\Http\Requests;
@@ -13,7 +14,9 @@ class AgentsController extends Controller
 {
     public function index()
     {
-        $agents = Agent::with('city')->get();
+//        $agents = Agent::with('city')->get();
+        $agents = Agent::with('subscribers')->get();
+//        dd($agnetSubscribers);
         return view('agents.index', compact('agents'));
     }
 
@@ -41,12 +44,12 @@ class AgentsController extends Controller
             $request->session()->flash('global-success', 'Successfully Created record');
         }
 
-        return $this->index();
+        return redirect()->route('agents.index');
     }
 
     public function edit($id)
     {
-        $agents = Agent::with('city')->get();
+        $agents = Agent::with('subscribers')->get();
         $agent = Agent::find($id);
 
         return view('agents.edit', compact('agent', 'agents'));

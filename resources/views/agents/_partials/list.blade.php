@@ -1,5 +1,5 @@
 <div class="table-responsive">
-    <table class="table table-bordered">
+    <table class="table table-bordered" id="myTable">
         <thead>
         <tr>
             <th>#</th>
@@ -8,6 +8,7 @@
             <th>NIC</th>
             <th>Gender</th>
             <th>Phone</th>
+            <th>Subs</th>
             <th>Area</th>
             <th>Controls</th>
         </tr>
@@ -22,6 +23,9 @@
                     <td>{!! $agent->nic !!}</td>
                     <td>{!! $agent->gender == 1 ? 'M' : 'F' !!}</td>
                     <td>{!! $agent->phone !!}</td>
+                    <td>
+                            {!! count($agent->subscribers) !!}
+                    </td>
                     <td>{!! $agent->city->city !!}</td>
                     <td>
                         <div class="btn-group">
@@ -30,10 +34,12 @@
                                href="{!! route('agents.edit', $agent->id) !!}">
                                 <span class="glyphicon glyphicon-edit"></span>
                             </a>
-                            {{--<button class="btn btn-sm btn-danger" type="submit">--}}
-                                {{--<span class="glyphicon glyphicon-trash delete"></span>--}}
-                            {{--</button>--}}
-                            {{--{!! Form::close() !!}--}}
+                            @if(!count($agent->subscribers))
+                            <button class="btn btn-sm btn-danger" type="submit">
+                                <span class="glyphicon glyphicon-trash delete"></span>
+                            </button>
+                            {!! Form::close() !!}
+                            @endif
                         </div>
                     </td>
                 </tr>
@@ -43,6 +49,6 @@
         </tbody>
     </table>
 </div>
-@push('scripts')
+{{--@push('scripts')--}}
 
-@endpush
+{{--@endpush--}}
