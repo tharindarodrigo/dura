@@ -12,6 +12,11 @@
                 <a href="{!! url('admin/agents') !!}">
                     <i class="fa fa-user"></i> <span>Agents</span>
                 </a>
+                <ul class="treeview-menu">
+                    <li class="@yield('agents-index')"><a href="{!! route('agents.index') !!}" ><i class="fa fa-circle-o"></i> Agent List</a></li>
+                    <li class="@yield('agents-create')"><a href="{!! route('agents.create') !!}" ><i class="fa fa-circle-o"></i> Create Agent</a></li>
+                    {{--<li class="active"><a href="index2.html"><i class="fa fa-circle-o"></i> Dashboard v2</a></li>--}}
+                </ul>
             </li>
             <li class="@yield('subscribers')">
                 <a href="{!! url('admin/subscribers') !!}">

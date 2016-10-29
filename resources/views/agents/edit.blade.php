@@ -52,16 +52,16 @@
                 </div>
             </div>
         </div>
-        <div class="col-md-8">
-            <div class="box box-primary">
-                <div class="box-header with-border">
-                    <h3 class="box-title">Agent List</h3>
-                </div>
-                <div class="box-body">
-                    @include('agents._partials.list')
-                </div>
-            </div>
-        </div>
+        {{--<div class="col-md-8">--}}
+            {{--<div class="box box-primary">--}}
+                {{--<div class="box-header with-border">--}}
+                    {{--<h3 class="box-title">Agent List</h3>--}}
+                {{--</div>--}}
+                {{--<div class="box-body">--}}
+                    {{--@include('agents._partials.list')--}}
+                {{--</div>--}}
+            {{--</div>--}}
+        {{--</div>--}}
     </div>
 @endsection
 @push('scripts')

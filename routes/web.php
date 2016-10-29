@@ -21,6 +21,8 @@ Route::group(['prefix' => 'admin'], function () {
     Route::get('/cities/{city_id}/get-area-list', 'CitiesController@getAreas');
     Route::resource('/areas', 'AreasController');
     Route::resource('/agents', 'AgentsController');
+    Route::post('/agents/search','AgentsController@search')->name('agents.search');
+    Route::get('/agents/from/{from}/to/{to}','AgentsController@searchAgents')->name('agents.search.from.to');
     Route::resource('/subscribers', 'SubscribersController');
 
 });

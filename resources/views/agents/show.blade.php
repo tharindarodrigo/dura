@@ -1,4 +1,3 @@
-
 @extends('layout.master')
 
 @push('styles')
@@ -26,34 +25,43 @@
 
 @endsection
 
-@section('agents')
-    active
-@endsection
-
-@section('agents-index')
+@section('project-types')
     active
 @endsection
 
 @section('content')
     <div class="row">
+        <div class="col-md-4">
+            <!-- general form elements -->
+            <div class="box box-primary">
+                <div class="box-header with-border">
+                    <h3 class="box-title">Create Agent</h3>
+                </div>
+                <div class="box-body">
+
+                    <div class="row">
+                        <div class="col-lg-12">
+                            {!! Form::open(['route'=> ['agents.search'], 'method'=>'post']) !!}
+                            @include('agents._partials.form')
+                            <div class="form-group">
+                                <div class="btn-group">
+                                    <button class="btn btn-primary" type="submit">Save</button>
+                                </div>
+                            </div>
+                            {!! Form::close() !!}
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
         <div class="col-md-12">
             <div class="box box-primary">
                 <div class="box-header with-border">
                     <h3 class="box-title">Agent List</h3>
                 </div>
                 <div class="box-body">
-                    <div class="row">
-                        <div class="col-lg-12">
-                            {!! Form::open(['route'=>['agents.search'],'method'=>'post']) !!}
-                            @include('agents._partials.search_form')
-                            {!! Form::close() !!}
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-lg-12">
-                            @include('agents._partials.list')
-                        </div>
-                    </div>
+                    @include('agents._partials.list')
                 </div>
             </div>
         </div>
@@ -95,19 +103,10 @@
 
 <script>
     $(document).ready(function () {
-        $('#myTable').dataTable();
+        $('#myTable').dataTable({
+            pagination: false
+        });
     });
 </script>
 
 @endpush
-
-
-
-
-
-
-
-
-
-
-

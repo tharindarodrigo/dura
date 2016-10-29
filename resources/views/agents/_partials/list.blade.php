@@ -24,21 +24,21 @@
                     <td>{!! $agent->gender == 1 ? 'M' : 'F' !!}</td>
                     <td>{!! $agent->phone !!}</td>
                     <td>
-                            {!! count($agent->subscribers) !!}
+                        {!! count($agent->subscribers) !!}
                     </td>
                     <td>{!! $agent->city->city !!}</td>
                     <td>
                         <div class="btn-group">
-{{--                            {!! Form::open(['route'=>['agents.destroy', $agent->id], 'method'=>'delete']) !!}--}}
+                            {!! Form::open(['route'=>['agents.destroy', $agent->id], 'method'=>'delete']) !!}
                             <a class="btn btn-sm btn-primary"
                                href="{!! route('agents.edit', $agent->id) !!}">
                                 <span class="glyphicon glyphicon-edit"></span>
                             </a>
                             @if(!count($agent->subscribers))
-                            <button class="btn btn-sm btn-danger" type="submit">
-                                <span class="glyphicon glyphicon-trash delete"></span>
-                            </button>
-                            {!! Form::close() !!}
+                                <button class="btn btn-sm btn-danger" type="submit">
+                                    <span class="glyphicon glyphicon-trash delete"></span>
+                                </button>
+                                {!! Form::close() !!}
                             @endif
                         </div>
                     </td>
@@ -49,6 +49,7 @@
         </tbody>
     </table>
 </div>
+
 {{--@push('scripts')--}}
 
 {{--@endpush--}}
